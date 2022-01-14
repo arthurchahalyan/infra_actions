@@ -69,7 +69,8 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull achakhalian/infra_actions:v1
+            sudo docker pull achakhalian/infra_project:latest
             #остановка всех контейнеров
-            sudo docker run --rm -d -p 5000:5000 achakhalian/infra_actions:v1
+            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker run --rm -d -p 5000:5000 achakhalian/infra_project:latest
 
