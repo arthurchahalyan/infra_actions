@@ -72,3 +72,4 @@ jobs:
             sudo docker pull achakhalian/infra_actions:v1
             #остановка всех контейнеров
             sudo docker run --rm -d -p 5000:5000 achakhalian/infra_actions:v1
+
